@@ -1,4 +1,4 @@
-# 🛡️ Sistema de Registro de Denúncias Anônimas (Assédio Moral e Sexual)
+#  Sistema de Registro de Denúncias Anônimas (Assédio Moral e Sexual)
 
 > **MVP em PHP Nativo e MySQL/MariaDB** desenvolvido como solução de Governança corporativa (eixo **ESG**) para a disciplina de Programação Web II. 
 
@@ -6,7 +6,7 @@ A aplicação oferece um canal seguro, totalmente anônimo e criptografado para 
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 * **Linguagem:** PHP (Nativo)
 * **Banco de Dados:** MySQL / MariaDB
@@ -15,7 +15,7 @@ A aplicação oferece um canal seguro, totalmente anônimo e criptografado para 
 
 ---
 
-## 📋 Dependências e Requisitos
+##  Dependências e Requisitos
 
 | Componente | Versão Mínima |
 | :--- | :--- |
@@ -25,7 +25,7 @@ A aplicação oferece um canal seguro, totalmente anônimo e criptografado para 
 
 ---
 
-## 🚀 Como Rodar o Projeto
+##  Como Rodar o Projeto
 
 1. **Copie os arquivos:**
    Mova a pasta `denuncias-dashboard` para o diretório de arquivos públicos do seu servidor local:
@@ -52,7 +52,7 @@ A aplicação oferece um canal seguro, totalmente anônimo e criptografado para 
 
 ---
 
-## 🔑 Acesso Administrativo (Painel de Compliance)
+##  Acesso Administrativo (Painel de Compliance)
 
 Para testar a gestão de casos e alterar status de chamados:
 
@@ -62,7 +62,7 @@ Para testar a gestão de casos e alterar status de chamados:
 
 ---
 
-## 🧪 Como Rodar os Testes
+##  Como Rodar os Testes
 
 O projeto utiliza **testes funcionais manuais** cobrindo o fluxo de ponta a ponta:
 
@@ -72,7 +72,7 @@ O projeto utiliza **testes funcionais manuais** cobrindo o fluxo de ponta a pont
 
 ---
 
-## 📁 Estrutura de Pastas e Arquivos
+##  Estrutura de Pastas e Arquivos
 
 * `index.php` / `denunciar.php` / `consultar.php` — Interface pública do sistema (acesso livre).
 * `admin/` — Área restrita para a equipe de Compliance (autenticação, dashboard e detalhamento).
@@ -83,7 +83,7 @@ O projeto utiliza **testes funcionais manuais** cobrindo o fluxo de ponta a pont
 
 ---
 
-## ⚠️ Problemas Frequentes & Soluções
+##  Problemas Frequentes & Soluções
 
 * **Erro de Conexão com o Banco de Dados**
   * *causa:* Credenciais incorretas no script PHP.
@@ -95,7 +95,7 @@ O projeto utiliza **testes funcionais manuais** cobrindo o fluxo de ponta a pont
 
 ---
 
-## 📌 Próximos Passos (Roadmap)
+##  Próximos Passos (Roadmap)
 
 - [ ] Disparo automático de e-mails para notificações de atualização de status.
 - [ ] Implementação de múltiplos perfis de acesso na área de Compliance (Analista vs. Gestor).
