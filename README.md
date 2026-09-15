@@ -1,72 +1,102 @@
-# Sistema de Registro de Denúncias Anônimas de Assédio Moral e Sexual
+# 🛡️ Sistema de Registro de Denúncias Anônimas (Assédio Moral e Sexual)
 
-MVP em PHP nativo (sem framework) e MySQL/MariaDB desenvolvido para o desafio da disciplina de Programação Web II — eixo ESG Governança. A aplicação consiste em um canal seguro para envio anônimo de denúncias, acompanhamento por protocolo e gestão de casos pela equipe de Compliance.
+> **MVP em PHP Nativo e MySQL/MariaDB** desenvolvido como solução de Governança corporativa (eixo **ESG**) para a disciplina de Programação Web II. 
 
-## Tecnologias Utilizadas
+A aplicação oferece um canal seguro, totalmente anônimo e criptografado para o envio de denúncias, acompanhamento por código de protocolo e gestão simplificada de casos pela equipe de Compliance.
 
-* PHP (Nativo)
-* MySQL / MariaDB
-* Apache Web Server
-* HTML5 / CSS3 / JavaScript
+---
 
-## Dependências e Versões Necessárias
+## 🛠️ Tecnologias Utilizadas
 
-* **PHP** - Versão: >= 7.4
-* **MySQL / MariaDB** - Versão: >= 5.7
-* **Servidor Local**: XAMPP, WAMP ou Laragon
+* **Linguagem:** PHP (Nativo)
+* **Banco de Dados:** MySQL / MariaDB
+* **Servidor Web:** Apache Web Server
+* **Front-end:** HTML5, CSS3 e JavaScript (Nativo)
 
-## Como rodar o projeto 
+---
 
-1. Copie a pasta `denuncias-dashboard` para o diretório de arquivos públicos do seu servidor local:
-   * **XAMPP**: `htdocs/`
-   * **WAMP / Laragon**: `www/`
+## 📋 Dependências e Requisitos
 
-2. Inicie os serviços do **Apache** e do **MySQL** pelo painel do seu ambiente local.
+| Componente | Versão Mínima |
+| :--- | :--- |
+| **PHP** | `>= 7.4` |
+| **MySQL / MariaDB** | `>= 5.7` |
+| **Ambiente Local** | XAMPP, WAMP ou Laragon |
 
-3. Abra o phpMyAdmin (`http://localhost/phpmyadmin`) e importe a estrutura do banco através do arquivo:
+---
+
+## 🚀 Como Rodar o Projeto
+
+1. **Copie os arquivos:**
+   Mova a pasta `denuncias-dashboard` para o diretório de arquivos públicos do seu servidor local:
+   * **XAMPP:** `htdocs/`
+   * **WAMP / Laragon:** `www/`
+
+2. **Inicie os Serviços:**
+   Abra o painel do seu ambiente local (ex: XAMPP Control Panel) e inicie os módulos **Apache** e **MySQL**.
+
+3. **Importe o Banco de Dados:**
+   Acesse o phpMyAdmin (`http://localhost/phpmyadmin`), crie um banco de dados e importe o arquivo de estrutura localizado em:
    `database/schema.sql`
 
-4. Verifique as credenciais de acesso ao banco no arquivo `includes/db.php` (configuração padrão: usuário `root` e sem senha)[cite: 1].
+4. **Confira as Credenciais:**
+   Verifique as configurações de conexão em `includes/db.php` *(Padrão XAMPP: usuário `root` e sem senha)*.
 
-5. Abra o navegador e acesse a URL abaixo **uma única vez** para criar o usuário administrador e carregar registros de demonstração:
-   `http://localhost/denuncias-dashboard/database/seed.php`[cite: 1]
+5. **Popule o Banco de Dados (Seed):**
+   Acesse a URL abaixo **uma única vez** no navegador para cadastrar o usuário administrador inicial e criar dados de teste:
+   `http://localhost/denuncias-dashboard/database/seed.php`
 
-6. Acesse a aplicação na página principal:
-   `http://localhost/denuncias-dashboard/`[cite: 1]
+6. **Acesse a Aplicação:**
+   Navegue até o canal público:
+   `http://localhost/denuncias-dashboard/`
 
-**Como confirmar que está rodando corretamente:**
-Ao acessar a URL principal (`http://localhost/denuncias-dashboard/`), o canal público de denúncias será exibido na tela[cite: 1]. Para testar a área restrita, acesse `http://localhost/denuncias-dashboard/admin/login.php` e utilize as credenciais geradas pelo seed:
+---
+
+## 🔑 Acesso Administrativo (Painel de Compliance)
+
+Para testar a gestão de casos e alterar status de chamados:
+
+* **URL de Login:** `http://localhost/denuncias-dashboard/admin/login.php`
 * **E-mail:** `compliance@empresa.com`
 * **Senha:** `compliance123`
 
-## Como rodar os testes
+---
 
-O projeto utiliza testes funcionais manuais cobrindo o fluxo de ponta a ponta. Para testar a aplicação:
-1. Envie uma denúncia fictícia pela interface pública e anote o número do protocolo gerado.
-2. Acesse a página de consulta com o protocolo para validar o status.
-3. Faça login no painel de Compliance (`admin/login.php`), altere o status da denúncia e confirme a atualização do histórico.
+## 🧪 Como Rodar os Testes
 
-## Estrutura do Projeto
+O projeto utiliza **testes funcionais manuais** cobrindo o fluxo de ponta a ponta:
 
-* `index.php`, `denunciar.php`, `consultar.php` — Páginas públicas (acesso sem login)[cite: 1].
-* `admin/` — Área restrita para a equipe de Compliance (login, painel geral e detalhe de cada caso)[cite: 1].
-* `includes/` — Scripts de conexão ao banco, autenticação e regras de negócio[cite: 1].
-* `database/schema.sql` — Script SQL de criação das tabelas[cite: 1].
-* `database/seed.php` — Script de população inicial do banco com dados de teste[cite: 1].
-* `uploads/evidencias/` — Diretório para armazenamento dos arquivos anexados[cite: 1].
+1. **Envio:** Cadastre uma denúncia fictícia no canal público (`index.php`) e anote o protocolo de 8 dígitos gerado.
+2. **Consulta:** Acesse a tela de consulta (`consultar.php`), informe o protocolo e valide se as informações conferem.
+3. **Gestão:** Faça login no painel restrito (`admin/login.php`), altere o status ou parecer do caso e confirme a atualização no histórico do protocolo.
 
-## Problemas enfrentados
+---
 
-### Problema 1: Erro de conexão com a base de dados
-* **Descrição:** A aplicação retornava mensagem de falha ao tentar conectar ao MySQL.
-* **Como solucionar:** Atualizar as configurações de usuário/senha dentro do arquivo `includes/db.php` para bater com as credenciais do ambiente local (ex: XAMPP por padrão usa `root` sem senha)[cite: 1].
+## 📁 Estrutura de Pastas e Arquivos
 
-### Problema 2: Login no painel administrativo falhando
-* **Descrição:** O login em `admin/login.php` informava credenciais inválidas logo após a instalação.
-* **Como solucionar:** Executar o script `database/seed.php` via navegador uma vez para popular o banco de dados com a conta inicial de testes[cite: 1].
+* `index.php` / `denunciar.php` / `consultar.php` — Interface pública do sistema (acesso livre).
+* `admin/` — Área restrita para a equipe de Compliance (autenticação, dashboard e detalhamento).
+* `includes/` — Regras de negócio, conexão com o banco de dados e funções globais.
+* `database/schema.sql` — Script DDL de criação das tabelas no MySQL.
+* `database/seed.php` — População inicial de dados e criação da conta admin.
+* `uploads/evidencias/` — Diretório seguro para armazenamento de anexos e evidências enviadas.
 
-## Próximos passos
+---
 
-* Adicionar envio automático de e-mail ao alterar o status do chamado.
-* Implementar suporte para múltiplos perfis de acesso na área administrativa.
-* Criar rotina de criptografia para os arquivos salvos em `uploads/evidencias/`[cite: 1].
+## ⚠️ Problemas Frequentes & Soluções
+
+* **Erro de Conexão com o Banco de Dados**
+  * *causa:* Credenciais incorretas no script PHP.
+  * *solução:* Ajuste os parâmetros de usuário e senha no arquivo `includes/db.php` de acordo com a configuração do seu servidor local.
+
+* **Login Falhando na Área Administrativa**
+  * *causa:* Tabela de usuários vazia no banco.
+  * *solução:* Execute a URL `http://localhost/denuncias-dashboard/database/seed.php` no navegador para criar a conta de testes.
+
+---
+
+## 📌 Próximos Passos (Roadmap)
+
+- [ ] Disparo automático de e-mails para notificações de atualização de status.
+- [ ] Implementação de múltiplos perfis de acesso na área de Compliance (Analista vs. Gestor).
+- [ ] Rotina de criptografia para os arquivos salvos em `uploads/evidencias/`.
