@@ -4,7 +4,11 @@
 
 A aplicação oferece um canal seguro, totalmente anônimo e criptografado para o envio de denúncias, acompanhamento por código de protocolo e gestão simplificada de casos pela equipe de Compliance.
 
----
+login inicial 
+
+<img width="1741" height="582" alt="image" src="https://github.com/user-attachments/assets/ff65f77c-dae5-46f9-9f5a-c5e572f6512e" />
+
+--- 
 
 ##  Tecnologias Utilizadas
 
